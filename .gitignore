@@ -1,0 +1,21 @@
+# Python
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+
+# raw and processed training data are re-downloaded by ml/kdrama_data.py
+/data/
+notebooks/data/
+
+# secrets and local tooling
+.env
+backend/.env
+.claude/
+.vercel
+
+# frontend
+node_modules/
+.next/
+*.tsbuildinfo
+.DS_Store

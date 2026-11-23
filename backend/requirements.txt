@@ -1,0 +1,9 @@
+# Runtime dependencies of the API only (the full project list is in ../requirements.txt).
+# scikit-learn must match the version that saved preference_model.joblib.
+fastapi==0.165.0
+pydantic==2.14.4
+httpx==0.28.1
+numpy==2.2.6
+pandas==3.1.1
+scikit-learn==1.9.1
+joblib==1.6.0

@@ -1,0 +1,19 @@
+# Python 3.11+  |  install:  pip install -r requirements.txt
+numpy==2.2.6
+pandas==3.1.1
+scikit-learn==1.9.1
+matplotlib==3.11.2
+umap-learn==0.6.0
+joblib==1.6.0
+fastapi==0.165.0
+uvicorn[standard]==0.54.0
+pydantic==2.14.4
+# notebooks, reports, slides, tests
+jupyter==1.1.1
+nbconvert==7.17.2
+nbformat==5.11.1
+ipykernel==7.4.0
+python-docx==1.2.0
+python-pptx==1.0.2
+httpx==0.28.1            # also used by the backend to call TMDB
+pytest==9.2.0
