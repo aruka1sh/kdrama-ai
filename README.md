@@ -2,6 +2,8 @@
 
 AI Fundamentals final exam project (QAIRU), **Variant 21 - Movie Preference**, adapted to Korean dramas.
 
+**Live site:** <https://kdrama-ai.vercel.app> &nbsp;|&nbsp; **Team:** Shakenova Aruzhan (lead), Qabir Madina, Shahap Aizere, Zholdaspek Dana
+
 | Part | What it is | Main file |
 |---|---|---|
 | Project 1 - Supervised | Will a viewer like a K-Drama? Logistic Regression vs Random Forest | `notebooks/Project1_Supervised_KDrama.ipynb` |
@@ -151,6 +153,22 @@ python qa/check_consistency.py
 | `GET /api/catalog/home` | hero dramas and homepage collections (each with its real criterion) |
 | `GET /api/catalog/discover` | catalogue: `q`, `genre`, `year`, `sort`, `page` |
 | `GET /api/catalog/drama/{id}` | details, cast, trailer, images, related dramas, match with the training dataset |
+
+## Deployment (Vercel)
+
+The site is one Vercel project with two services defined in `vercel.json`: the Next.js frontend (`frontend/`)
+and the FastAPI backend (`backend/`). Requests to `/api/*` go to the backend, everything else to the frontend.
+The backend folder is self-contained: `backend/data/ml/` holds a copy of the trained model, the result files and
+the drama table. After retraining, refresh that copy and redeploy:
+
+```bash
+python backend/scripts/bundle_artifacts.py
+```
+```bash
+npx vercel@latest deploy --prod
+```
+
+The GitHub repository is connected to the Vercel project, so a push to `main` also triggers a deployment.
 
 ## Reproducibility
 
